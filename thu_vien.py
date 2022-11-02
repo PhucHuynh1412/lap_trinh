@@ -5,6 +5,7 @@ import pandas as pd
 import math
 import pyinputplus as pin 
 
+
 def giai_phuong_trinh_bac_2():
     a = pin.inputFloat("Nhập hệ số a: ")
     b = pin.inputFloat("Nhập hệ số b: ")
@@ -27,15 +28,12 @@ def giai_phuong_trinh_bac_2():
             print("Phương trình có 2 nghiệm:")
             print(f"  x1 = {x1}")
             print(f"  x2 = {x2}")
-def ve_do_thi():
-    pass 
 
 def tim_so_lon_nhat():
     nhap = input("Nhập n số cần tìm số lớn nhất: ")
-    data = nhap.split(" ")
+    data = nhap.split(' ')
     data_num = []
     for num in data:
-       data_num.append(float(num))
-    max_num = max(data_num)
-    print(max_num)
+        data_num.append(float(num))
+    print(f"Số lớn nhất trong dãy số là: {max(data_num)}")
     
