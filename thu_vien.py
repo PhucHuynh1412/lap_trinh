@@ -4,7 +4,7 @@ import seaborn as sb
 import pandas as pd 
 import math
 import pyinputplus as pin 
-
+import speechRecognition as sr 
 
 def giai_phuong_trinh_bac_2():
     a = pin.inputFloat("Nhập hệ số a: ")
@@ -36,4 +36,20 @@ def tim_so_lon_nhat():
     for num in data:
         data_num.append(float(num))
     print(f"Số lớn nhất trong dãy số là: {max(data_num)}")
-    
+
+def ve_do_thi_chuyen_dong_thang_deu():
+    x0 = pin.inputFloat("Nhập tọa độ đầu của vật: ")
+    t0 = pin.inputFloat("Nhập thời điểm đầu của vật: ")
+    v = pin.inputFloat("Nhập tốc độ của vật: ")
+    chieu = pin.inputStr("Nhập dấu của vận tốc: ")
+    if chieu.strip() == "+":
+        print("Vật chuyển động ngược chiều dương.")
+        t = pin.inputFloat("Nhập thời điểm sau của vật: ")
+        dt = np.arange(t0,t+1)        
+        x = x0 + v*(dt-t0)
+        plt.plot(dt,x)
+        plt.grid()
+        plt.show()
+
+        
+
