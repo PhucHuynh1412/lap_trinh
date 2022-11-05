@@ -1,6 +1,6 @@
 # TODO: Thu vien
 import datetime
-import playsound
+from playsound import playsound
 from gtts import gTTS
 import speech_recognition as sr 
 import os
@@ -15,7 +15,7 @@ def speak(text):
     print(f"Như: {text}")
     nhu = gTTS(text,lang='vi')
     nhu.save('nhu.mp3')
-    playsound.playsound('nhu.mp3')
+    playsound('nhu.mp3')
     os.remove('nhu.mp3')
 
 def listen():

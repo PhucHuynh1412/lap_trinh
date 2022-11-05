@@ -4,7 +4,12 @@ import seaborn as sb
 import pandas as pd 
 import math
 import pyinputplus as pin 
-import speechRecognition as sr 
+import gtts 
+import pyttsx3 
+import os
+import sys 
+import wikipedia
+
 
 def giai_phuong_trinh_bac_2():
     a = pin.inputFloat("Nhập hệ số a: ")
@@ -51,5 +56,21 @@ def ve_do_thi_chuyen_dong_thang_deu():
         plt.grid()
         plt.show()
 
-        
+def tinh_van_toc_bien_doi_deu():
+    print("Đề bài có:")
+    print("  1. Thời gian.")
+    print("  2. Không có thời gian.")
+    lua_chon = pin.inputInt("Bạn lựa chọn trường hợp: ")
+    if lua_chon == 1:
+        v0 = pin.inputFloat("Nhập vận tốc ban đầu: ")
+        a = pin.inputFloat("Nhập gia tốc của vật: ")
+        t = pin.inputFloat("Thời điểm t là: ")
+        v = v0 + a*t 
+        print(f"Vận tốc của vật ở thời điểm {t}s là: {v} m/s")
+    if lua_chon == 2:
+        s = pin.inputFloat("Nhập quãng đường vật đi: ")
+        a = pin.inputFloat("Nhập gia tốc của vật: ")
+        v0 = pin.inputFloat("Nhập vận tốc ban đầu: ")
+        v = sqrt(2*a*s - v0**2)
+        print(f"Vận tốc của vật ở thời điểm {t}s là: {v} m/s")
 
