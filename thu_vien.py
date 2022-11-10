@@ -10,7 +10,6 @@ import os
 import sys 
 import wikipedia
 
-
 def giai_phuong_trinh_bac_2():
     a = pin.inputFloat("Nhập hệ số a: ")
     b = pin.inputFloat("Nhập hệ số b: ")
@@ -73,4 +72,14 @@ def tinh_van_toc_bien_doi_deu():
         v0 = pin.inputFloat("Nhập vận tốc ban đầu: ")
         v = sqrt(2*a*s - v0**2)
         print(f"Vận tốc của vật ở thời điểm {t}s là: {v} m/s")
+
+def tinh_quang_duong_bien_doi_deu():
+    print("Đề bài có:")
+    print("  1. Thời gian.")
+    print("  2. Không có thời gian.")
+    lua_chon = pin.inputInt("Bạn lựa chọn trường hợp: ")
+    if lua_chon == 1:
+
+    else:
+        
 
