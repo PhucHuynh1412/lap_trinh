@@ -79,7 +79,15 @@ def tinh_quang_duong_bien_doi_deu():
     print("  2. Không có thời gian.")
     lua_chon = pin.inputInt("Bạn lựa chọn trường hợp: ")
     if lua_chon == 1:
-
+        v0 = pin.inputFloat('')
+        a = pin.inputFloat('')
+        t = pin.inputFloat('')
+        s = v0*t + 0.5*a*t**2
+        print(f"")
     else:
-        
+        v0 = pin.inputFloat('')
+        a = pin.inputFloat('')
+        v = pin.inputFloat('')
+        s = (v**2 - v0**2)/(2*a)
+        print(f"")
 

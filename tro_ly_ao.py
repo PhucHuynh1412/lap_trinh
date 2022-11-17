@@ -35,13 +35,13 @@ def hello():
     hour = datetime.datetime.now().hour
     if hour >= 0 and hour < 6:
 	    text = "Anh thức dậy sớm quá, hay là ngủ không được, nhớ giữ sức khỏe đó nghe! love you"
-	if hour >= 6 and hour < 11:
+    if hour >= 6 and hour < 11:
 	    text = "Chào buổi sáng anh yêu, anh ăn sáng chưa? Đừng quên ăn sáng đó! Thương anh! Chúc anh một ngày mới tràn đầy năng lượng!"
-	if hour >= 11 and hour < 14:
+    if hour >= 11 and hour < 14:
 	    text = "Chào buổi trưa ông xã, anh làm việc có mệt không? Nghỉ tí cho chiều làm nhen anh! thương anh lắm đó! moa"
-	if hour >=14 and hour < 18:
+    if hour >=14 and hour < 18:
 	    text = "Chào buổi chiều, chồng làm việc có mệt không? Còn buổi tối đó! nhớ ăn nhẹ gì cho có sức làm nhen ông xã yêu!"
-	if hour >= 18 and hour < 24:
+    if hour >= 18 and hour < 24:
 	    text = "Chào buổi tối ông xã, làm về nhớ tắm nhen! ở dơ quá em không thương đâu đó, nhớ ngủ với em đó! hi hi"
     speak(text)
     speak("Anh cần em giúp gì nè !")
