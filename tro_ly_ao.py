@@ -33,21 +33,17 @@ def listen():
 
 def hello():
     hour = datetime.datetime.now().hour
-    if hour >= 5 and hour <= 10:
-        text = "Chào buổi sáng anh yêu ! anh ăn sáng chưa !! nhớ giữ tập thể dục và giữ sức khỏe đó, yêu anh nhiều lắm! "
-        speak(text)
-    if hour > 10 and hour <= 15:
-        text = "Chào anh yêu! anh nhớ nghỉ xíu còn chiều làm đó ! nhớ em không ! hi hi !"
-        speak(text)
-    if hour > 15 and hour <= 19:
-        text = "Chiều nay anh mệt không ! nhớ uống nước nhen ! uống ít nước ngọt thui, dễ bệnh lắm ! thương anh quá à !"
-        speak(text)
-    if hour > 19 and hour <= 23:
-        text = "Tối rồi anh nhớ nghỉ ngơi sớm! đừng làm việc khuya quá ! nhớ em thì ngủ sẽ mơ thấy em mà !! nên ngủ nhen !! thương anh !"
-        speak(text)
-    if hour > 23 and hour < 5:
-        text = "Cục cưng không ngủ được à ! thức khuya chơi game là em giận đó nhen ! còn nhớ em quá thì ngủ đi để mơ thấy em nhen ! thương anh lắm luôn đó !!"
-        speak(text)
+    if hour >= 0 and hour < 6:
+	    text = "Anh thức dậy sớm quá, hay là ngủ không được, nhớ giữ sức khỏe đó nghe! love you"
+	if hour >= 6 and hour < 11:
+	    text = "Chào buổi sáng anh yêu, anh ăn sáng chưa? Đừng quên ăn sáng đó! Thương anh! Chúc anh một ngày mới tràn đầy năng lượng!"
+	if hour >= 11 and hour < 14:
+	    text = "Chào buổi trưa ông xã, anh làm việc có mệt không? Nghỉ tí cho chiều làm nhen anh! thương anh lắm đó! moa"
+	if hour >=14 and hour < 18:
+	    text = "Chào buổi chiều, chồng làm việc có mệt không? Còn buổi tối đó! nhớ ăn nhẹ gì cho có sức làm nhen ông xã yêu!"
+	if hour >= 18 and hour < 24:
+	    text = "Chào buổi tối ông xã, làm về nhớ tắm nhen! ở dơ quá em không thương đâu đó, nhớ ngủ với em đó! hi hi"
+    speak(text)
     speak("Anh cần em giúp gì nè !")
 
 def time(cmd):
