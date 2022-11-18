@@ -79,15 +79,16 @@ def tinh_quang_duong_bien_doi_deu():
     print("  2. Không có thời gian.")
     lua_chon = pin.inputInt("Bạn lựa chọn trường hợp: ")
     if lua_chon == 1:
-        v0 = pin.inputFloat('')
-        a = pin.inputFloat('')
-        t = pin.inputFloat('')
+        v0 = pin.inputFloat('Nhập vận tốc đầu: ')
+        a = pin.inputFloat('Nhập gia tốc: ')
+        t = pin.inputFloat('Nhập thời gian: ')
         s = v0*t + 0.5*a*t**2
-        print(f"")
+        print(f"Quãng đường vật đi được là: {s}m")
     else:
-        v0 = pin.inputFloat('')
-        a = pin.inputFloat('')
-        v = pin.inputFloat('')
+        v0 = pin.inputFloat('Nhập vận tốc đầu: ')
+        a = pin.inputFloat('Nhập gia tốc: ')
+        v = pin.inputFloat('Nhập vận tốc sau: ')
         s = (v**2 - v0**2)/(2*a)
-        print(f"")
+        print(f"Quãng đường vật đi được là: {s}m")
+
 
