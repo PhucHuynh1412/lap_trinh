@@ -8,26 +8,30 @@ import webbrowser as wb
 import sys 
 import pyttsx3 as tts 
 import wikipedia
+import time
+import webbrowser
+from webdriver_manager.firefox import *
 
 
 # TODO: Ham
 def speak(text):
-    print(f"Như: {text}")
+    print(f"Bà xã: {text}")
     nhu = gTTS(text,lang='vi')
-    nhu.save('nhu.mp3')
-    playsound('nhu.mp3')
-    os.remove('nhu.mp3')
+    nhu.save('baxa.mp3')
+    playsound('baxa.mp3')
+    os.remove('baxa.mp3')
 
 def listen():
-    nhu = sr.Recognizer()
+    baxa = sr.Recognizer()
     with sr.Microphone() as source: 
-        nhu.pause_threshold=1
-        audio = nhu.listen(source,phrase_time_limit=7)
+        baxa.pause_threshold=1
+        audio = baxa.listen(source,phrase_time_limit=7)
         try:
-            text = nhu.recognize_google(audio, language='vi-VN')
+            text = baxa.recognize_google(audio, language='vi-VN')
             print(f"Anh: {text}")
             return text
         except:
+            time.sleep(1)
             speak("Em nghe không rõ anh nói lại nhen!")
             listen()
 
@@ -44,9 +48,9 @@ def hello():
     if hour >= 18 and hour < 24:
 	    text = "Chào buổi tối ông xã, làm về nhớ tắm nhen! ở dơ quá em không thương đâu đó, nhớ ngủ với em đó! hi hi"
     speak(text)
-    speak("Anh cần em giúp gì nè !")
+    speak("Anh cần em giúp gì nè !") 
 
-def time(cmd):
+def get_time(cmd):
     today = datetime.datetime.now()
     text = ""
     if "giờ" in cmd:
@@ -54,10 +58,39 @@ def time(cmd):
     elif "ngày" in cmd:
         text = f"Anh yêu hôm này là ngày {today.day} tháng {today.month} năm {today.year}"
     speak(text)
+       
+def stop():
+    speak("Hẹn gặp lại anh nhen! Nhớ giữ sức khỏe đó nhen! thương thương thương")
+
+def get_search():
+    speak("Mở google cho anh nè!")
+    time.sleep(1)
+    speak('Anh muốn tìm thông tin gì nè nói em nghe em tìm cho! ')
+    text = listen()
+    speak(f"Em tìm được thông tin về {text} cho anh nè! Em giỏi không! Biết là anh sẽ khen em nè !! anh mà không khen là em giận luôn đó! ")
+    webbrowser.open(f"https://www.google.com/search?q={text}")
+
+def get_word():
+    speak('Mở văn bản cho anh làm việc nè! Chăm chỉ nhen anh!')
+    os.system('libreoffice')
+
+def get_youtube():
+    speak("Em chuẩn bị mở youtube cho anh! ")
+    time.sleep(1)
+    speak('Anh cần xem về chủ đề gì nè!')
+    text = listen()
+    speak(f"Em tìm được chủ đề {text} cho anh nè! Em giỏi không! Biết là anh sẽ khen em nè !! anh mà không khen là em giận luôn đó! ")
+    webbrowser.open(f"https://www.youtube.com/results?search_query={text}")
 
 def brain(text):
     if 'mấy giờ' in text or 'ngày mấy' in text:
-        time(text)
+        get_time(text)
+    if 'mở google' in text:
+        get_search()
+    if 'mở văn bản' in text:
+        get_word()
+    if 'mở youtube' in text:
+        get_youtube()
 
 def main():
     hello()
