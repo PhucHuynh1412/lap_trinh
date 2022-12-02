@@ -10,8 +10,6 @@ import pyttsx3 as tts
 import wikipedia
 import time
 import webbrowser
-from webdriver_manager.firefox import *
-
 
 # TODO: Ham
 def speak(text):
@@ -82,6 +80,9 @@ def get_youtube():
     speak(f"Em tìm được chủ đề {text} cho anh nè! Em giỏi không! Biết là anh sẽ khen em nè !! anh mà không khen là em giận luôn đó! ")
     webbrowser.open(f"https://www.youtube.com/results?search_query={text}")
 
+def change_life():
+    pass
+    
 def brain(text):
     if 'mấy giờ' in text or 'ngày mấy' in text:
         get_time(text)

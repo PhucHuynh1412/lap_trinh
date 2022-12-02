@@ -102,4 +102,3 @@ def kiem_tra_so_nguyen_to():
     else:
         print(f"{n} là số nguyên tố.")
 
-
