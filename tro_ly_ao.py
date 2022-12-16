@@ -1,4 +1,5 @@
 # TODO: Thu vien
+import random
 import datetime
 from playsound import playsound
 from gtts import gTTS
@@ -10,6 +11,7 @@ import pyttsx3 as tts
 import wikipedia
 import time
 import webbrowser
+import pyinputplus as pin 
 
 # TODO: Ham
 def speak(text):
@@ -81,8 +83,25 @@ def get_youtube():
     webbrowser.open(f"https://www.youtube.com/results?search_query={text}")
 
 def change_life():
-    pass
-    
+    with open('100_Cau_Quyet_Tam.txt', encoding='utf-8') as f:
+        lines = []
+        for line in f.readlines():
+            lines.append(line)
+        num_begin = random.randint(0, len(lines))
+        text = 'Em có ba lời động viên anh nè ông xã! Cố lên nhen! anh nghe nè!!'
+        speak(text)
+        time.sleep(2)
+        for idx in range(num_begin, num_begin+3):
+            text = lines[idx]
+            speak(text)
+    text ='Anh đã cảm thấy tốt hơn chưa ! Em thương ông xã lắm ! Ông xã có thương em không! Nếu có nhập chữ có'
+    speak(text)
+    ans = pin.inputStr("Anh trả lời em: ")
+    if ans == 'có':
+        speak('em yêu anh mãi mãi! chụt chụt chụt')
+    else:
+        speak('Giận')
+
 def brain(text):
     if 'mấy giờ' in text or 'ngày mấy' in text:
         get_time(text)
@@ -92,6 +111,8 @@ def brain(text):
         get_word()
     if 'mở youtube' in text:
         get_youtube()
+    if 'mệt mỏi' in text or 'bỏ cuộc' in text or 'mệt quá' in text:
+        change_life()
 
 def main():
     hello()

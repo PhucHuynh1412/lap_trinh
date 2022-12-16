@@ -1,4 +1,4 @@
-mmport pyinputplus as pin 
+import pyinputplus as pin 
 import numpy as np 
 
 # TODO: Nhập cơ sở dữ liệu ban đầu 
