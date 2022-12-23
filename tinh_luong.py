@@ -18,11 +18,11 @@ print(f"Tiền lương tháng này: {luong} đồng.")
 
 # TODO: Tính tiền tiết kiệm
 tien_no = 9100
-tien_tiet_kiem = (luong - tien_no)*0.15
+tien_tiet_kiem = 2*(luong - tien_no)*0.15
 print(f"Tiền tiết kiệm tháng này là: {tien_tiet_kiem}")
 
 # TODO: Tính tiền xài trong tháng
-tien_ba_me = 1500
+tien_ba_me = 2000
 tien_con = pin.inputFloat("Nhập tiền đóng học phí cho con: ")
 tien_xai = luong - tien_no - tien_ba_me - tien_tiet_kiem - tien_con 
 print(f"Tiền xài tháng này là: {tien_xai}")

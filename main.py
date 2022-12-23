@@ -1,20 +1,20 @@
 from PySide6.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton
+from PySide6.QtCore import QSize, Qt
 
 
-import sys
+import sys 
 
+class MainWindow (QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("My app")
+        self.button = QPushButton("Push Me")
+        self.setFixedSize(QSize(400,300))
+        self.setCentralWidget(self.button)
+        
 app = QApplication(sys.argv)
-
-window = QMainWindow()
-window.setWindowTitle("A first Program with PySide6")
-
-button = QPushButton()
-button.setText("Press Me")
-
-window.setCentralWidget(button)
-
+window = MainWindow()
 window.show()
 
 app.exec_()
-
 
