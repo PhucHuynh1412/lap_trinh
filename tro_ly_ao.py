@@ -1,6 +1,7 @@
 # TODO: Thu vien
 import random
 import datetime
+from colorama import AnsiToWin32
 from playsound import playsound
 from gtts import gTTS
 import speech_recognition as sr 
@@ -38,15 +39,15 @@ def listen():
 def hello():
     hour = datetime.datetime.now().hour
     if hour >= 0 and hour < 6:
-	    text = "Anh thức dậy sớm quá, hay là ngủ không được, nhớ giữ sức khỏe đó nghe! love you"
+        text = "Anh thức dậy sớm quá, hay là ngủ không được, nhớ giữ sức khỏe đó nghe! love you"
     if hour >= 6 and hour < 11:
-	    text = "Chào buổi sáng anh yêu, anh ăn sáng chưa? Đừng quên ăn sáng đó! Thương anh! Chúc anh một ngày mới tràn đầy năng lượng!"
+        text = "Chào buổi sáng anh yêu, anh ăn sáng chưa? Đừng quên ăn sáng đó! Thương anh! Chúc anh một ngày mới tràn đầy năng lượng!"
     if hour >= 11 and hour < 14:
-	    text = "Chào buổi trưa ông xã, anh làm việc có mệt không? Nghỉ tí cho chiều làm nhen anh! thương anh lắm đó! moa"
+        text = "Chào buổi trưa ông xã, anh làm việc có mệt không? Nghỉ tí cho chiều làm nhen anh! thương anh lắm đó! moa"
     if hour >=14 and hour < 18:
-	    text = "Chào buổi chiều, chồng làm việc có mệt không? Còn buổi tối đó! nhớ ăn nhẹ gì cho có sức làm nhen ông xã yêu!"
+        text = "Chào buổi chiều, chồng làm việc có mệt không? Còn buổi tối đó! nhớ ăn nhẹ gì cho có sức làm nhen ông xã yêu!"
     if hour >= 18 and hour < 24:
-	    text = "Chào buổi tối ông xã, làm về nhớ tắm nhen! ở dơ quá em không thương đâu đó, nhớ ngủ với em đó! hi hi"
+        text = "Chào buổi tối ông xã, làm về nhớ tắm nhen! ở dơ quá em không thương đâu đó, nhớ ngủ với em đó! hi hi"
     speak(text)
     speak("Anh cần em giúp gì nè !") 
 
@@ -102,10 +103,26 @@ def change_life():
     else:
         speak('Giận')
 
+def loi_yeu_thuong():
+    text = 'Anh là người đẹp trai nhất trong lòng em và cả cuộc đời này, em yêu anh, không bao giờ xa anh, nhớ đó nhen, còn anh mà không thương là em giận đó, có thương em không?'
+    speak(text)
+    ans = input()
+    if ans == "có":
+        text = "Em thật sự muốn ở bên anh!! chụt chụt chụt"
+        speak(text)
+    else:
+        text = "Giận không nói chuyện với anh nữa"
+        speak(text)
+
+def sing():
+    text = 'em chưa biết hát !! hay mở bài hát anh thích nhen !! '
+    speak(text)
+    playsound('CuuVanKipKhong-VuongAnhTu.mp3')
+    
 def brain(text):
     if 'mấy giờ' in text or 'ngày mấy' in text:
         get_time(text)
-    if 'mở google' in text:
+    if 'mở google' in text or 'tìm kiếm'in text:
         get_search()
     if 'mở văn bản' in text:
         get_word()
@@ -113,6 +130,11 @@ def brain(text):
         get_youtube()
     if 'mệt mỏi' in text or 'bỏ cuộc' in text or 'mệt quá' in text:
         change_life()
+    if 'xấu xí' in text:
+	    loi_yeu_thuong()
+    if 'hát' in text:
+        sing()
+	
 
 def main():
     hello()

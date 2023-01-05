@@ -102,3 +102,27 @@ def kiem_tra_so_nguyen_to():
     else:
         print(f"{n} là số nguyên tố.")
 
+def nang_luong_phong_xa():
+    f = pin.inputFloat('Nhập giá trị tần số của bức xạ: f = ')
+    h = 6.625*10**(-34)
+    E = h*f 
+    print(f'Năng lượng của bức xạ là: {E} J')
+
+
+def tinh_electron_du_thieu():
+    q = pin.inputFloat('Nhập giá trị điện tích q = ')
+    e = 1.6*10**(-19)
+    n = q/e
+    print(f'Số electron dư thiếu trong vật nhiễm điện: {n} hạt')
+
+def tinh_luc_tinh_dien():
+    q1 = pin.inputFloat('Nhập giá trị điện tích q1 = ')
+    q2 = pin.inputFloat('Nhập giá trị điện tích q2 = ')
+    e = pin.inputFloat('Nhập hằng số điện môi: ')
+    r = pin.inputFloat('Nhập khoảng cách giữa 2 điện tích r = ')
+    k = 9*10**9
+    F = k*q1*q2/(e*r**2)
+    print(f'Lực tĩnh điện giữa 2 điện tích là: {F} N')
+
+
+
