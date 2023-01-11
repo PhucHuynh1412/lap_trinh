@@ -134,7 +134,17 @@ def brain(text):
 	    loi_yeu_thuong()
     if 'hát' in text:
         sing()
-	
+def xac_nhan_ong_xa():
+    text = 'Bạn là ai? Mật khẩu là gì? Nói '
+    speak(text)
+    text = listen()
+    if 'mãi mãi' in text:
+        text = 'Chào ông xã đã đăng nhập thành công !'
+        speak(text)
+    else:
+        text = 'Chào bạn ! bạn đăng nhập không thành công!'
+        speak(text)
+
 
 def main():
     hello()

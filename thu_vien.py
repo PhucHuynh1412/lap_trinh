@@ -124,5 +124,11 @@ def tinh_luc_tinh_dien():
     F = k*q1*q2/(e*r**2)
     print(f'Lực tĩnh điện giữa 2 điện tích là: {F} N')
 
-
+def tinh_cong_cua_luc():
+    F = pin.inputFloat("Nhập độ lớn của lực: ")
+    s = pin.inputFloat("Nhập quãng đường vật đi được: ")
+    alpha = pin.inputFloat("Nhập góc giữa lực và chiều chuyển động: ")
+    A = F*s*np.cos(alpha*np.pi/180)
+    print(f"Công của lực là: A = {A}J. ")
+    
 
