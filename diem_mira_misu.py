@@ -37,7 +37,6 @@ def ghi(data_end):
     for x in data_end:
         name = x
         data = data_end.get(x)
-    text = ""
     with open(f'{name}.txt', 'a') as file:
         for item in data:
             file.write(str(item))
