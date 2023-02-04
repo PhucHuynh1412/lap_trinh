@@ -21,6 +21,8 @@ tien_no = 9100
 tien_tiet_kiem = 2*(luong - tien_no)*0.15
 print(f"Tiền tiết kiệm tháng này là: {tien_tiet_kiem}")
 
+# TODO: Tính tiền gửi finhay hoặc tikop
+
 # TODO: Tính tiền xài trong tháng
 tien_ba_me = 2000
 tien_con = pin.inputFloat("Nhập tiền đóng học phí cho con: ")

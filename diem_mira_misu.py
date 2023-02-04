@@ -20,10 +20,13 @@ def name():
         return data_name[1]
     elif lua_chon_name == 2:
         return data_name[2]
+    else:
+        print('Ba chọn chưa đúng nhen!')
+        name()
 
 def nhap_diem(name):
     print('*'*20)
-    diem = pin.inputInt(f'Nhập điểm của {name} là ')
+    diem = pin.inputInt(f'Nhập điểm của {name} là: ')
     noi_dung = pin.inputStr(f'Nhập thông tin điểm của {name} là: ')
     today = datetime.datetime.today().date().strftime('%A - %d/%m/%Y')
     data = [today, diem, noi_dung]
@@ -38,13 +41,17 @@ def ghi(data_end):
     with open(f'{name}.txt', 'a') as file:
         for item in data:
             file.write(str(item))
-            file.write("==")
+            file.write(" - ")
         file.write('\n')
     print('Done')
 
 def xuat(name):
-    pass
-
+    diem = 0
+    with open(f'{name}.txt', 'r') as file:
+        for line in file.readlines():
+            data_line = line.split(' - ')
+            diem += int(data_line[2])
+    print(f'Điểm của {name} là: {diem}')
 
 def main():
     lua_chon = menu()
@@ -52,11 +59,14 @@ def main():
         n = name()
         data_end = nhap_diem(n)
         ghi(data_end)
+        xuat(n)
     elif lua_chon == 3:
         sys.exit()
     elif lua_chon == 2:
         pass
+    else:
+        print('Ba chọn chưa đúng số!')
+        main()
 
 if __name__ == "__main__":
     main()
-
