@@ -132,7 +132,7 @@ def brain(text):
         change_life()
     if 'xấu xí' in text:
 	    loi_yeu_thuong()
-    if 'hát' in text:
+    if 'hát' in text or 'nhạc' in text:
         sing()
 def xac_nhan_ong_xa():
     text = 'Bạn là ai? Mật khẩu là gì? Nói '
