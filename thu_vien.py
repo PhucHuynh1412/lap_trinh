@@ -131,4 +131,10 @@ def tinh_cong_cua_luc():
     A = F*s*np.cos(alpha*np.pi/180)
     print(f"Công của lực là: A = {A}J. ")
     
-
+def cong_thuc_doc_lap_trong_dao_dong_dieu_hoa_x_v():
+    data = {1: 'Tìm x', 2: 'Tìm v', 3: 'Tìm A'}
+    for k,v in data.items():
+        print(f'{k}. {v}')
+    lua_chon = pin.inputInt('Bạn chọn tìm gì: ')
+    if lua_chon == 1:
+        w

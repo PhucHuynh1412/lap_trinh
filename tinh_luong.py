@@ -20,6 +20,8 @@ def muc_luong_quy_dinh(muc_luong):
     return muc_sang, muc_toi, muc_chu_nhat
 
 # TODO: Tính tiền gửi finhay hoặc tikop
+def tikop():
+    pass
 
 # TODO: Tính tiền xài trong tháng
 def tinh_tien_xai(luong, tien_con):
