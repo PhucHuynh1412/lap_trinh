@@ -1,7 +1,7 @@
 from selenium import webdriver
 from time import sleep
 
-browser = webdriver.Chrome(executable_path='./chromedriver')
+browser = webdriver.Edge(executable_path='edge.exe')
 
 browser.get ('http://facebook.com')
 

@@ -102,39 +102,3 @@ def kiem_tra_so_nguyen_to():
     else:
         print(f"{n} là số nguyên tố.")
 
-def nang_luong_phong_xa():
-    f = pin.inputFloat('Nhập giá trị tần số của bức xạ: f = ')
-    h = 6.625*10**(-34)
-    E = h*f 
-    print(f'Năng lượng của bức xạ là: {E} J')
-
-
-def tinh_electron_du_thieu():
-    q = pin.inputFloat('Nhập giá trị điện tích q = ')
-    e = 1.6*10**(-19)
-    n = q/e
-    print(f'Số electron dư thiếu trong vật nhiễm điện: {n} hạt')
-
-def tinh_luc_tinh_dien():
-    q1 = pin.inputFloat('Nhập giá trị điện tích q1 = ')
-    q2 = pin.inputFloat('Nhập giá trị điện tích q2 = ')
-    e = pin.inputFloat('Nhập hằng số điện môi: ')
-    r = pin.inputFloat('Nhập khoảng cách giữa 2 điện tích r = ')
-    k = 9*10**9
-    F = k*q1*q2/(e*r**2)
-    print(f'Lực tĩnh điện giữa 2 điện tích là: {F} N')
-
-def tinh_cong_cua_luc():
-    F = pin.inputFloat("Nhập độ lớn của lực: ")
-    s = pin.inputFloat("Nhập quãng đường vật đi được: ")
-    alpha = pin.inputFloat("Nhập góc giữa lực và chiều chuyển động: ")
-    A = F*s*np.cos(alpha*np.pi/180)
-    print(f"Công của lực là: A = {A}J. ")
-    
-def cong_thuc_doc_lap_trong_dao_dong_dieu_hoa_x_v():
-    data = {1: 'Tìm x', 2: 'Tìm v', 3: 'Tìm A'}
-    for k,v in data.items():
-        print(f'{k}. {v}')
-    lua_chon = pin.inputInt('Bạn chọn tìm gì: ')
-    if lua_chon == 1:
-        w
