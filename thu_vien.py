@@ -9,6 +9,7 @@ import pyttsx3
 import os
 import sys 
 import wikipedia
+from time import sleep
 
 def giai_phuong_trinh_bac_2():
     a = pin.inputFloat("Nhập hệ số a: ")
