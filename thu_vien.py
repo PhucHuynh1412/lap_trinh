@@ -1,5 +1,3 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import seaborn as sb 
 import pandas as pd 
 import math
@@ -102,4 +100,20 @@ def kiem_tra_so_nguyen_to():
         print(f"{n} không phải là sô nguyên tố.")
     else:
         print(f"{n} là số nguyên tố.")
+
+def nang_luong_buc_xa():
+    if lua_chon == 1:
+        f = pin.inputFloat('Nhập tần số của bức xạ: ')
+        h = 6.625*10**(-34)
+        e = 1.6*10**(-19)
+        c = 3e8
+        w = h*f/e
+        lamda = 1e6*c/f
+        print(f'Năng lượng của bức xạ là: {round(w,3)} eV .')
+        print(f'Bước sóng của bức xạ là: {round(lamda,3)} um.')
+    if lua_chon == 2:
+        f = pin.inputFloat('Nhập tần số của bức xạ: ')
+        h = 6.625*10**(-34)
+
+
 

@@ -53,7 +53,7 @@ def hello():
 
 def get_time(cmd):
     today = datetime.datetime.now()
-    text = ""
+    text  = ""
     if "giờ" in cmd:
         text = f"Anh yêu bây giờ là {today.hour} giờ {today.minute} phút {today.second} giây."
     elif "ngày" in cmd:
@@ -101,7 +101,7 @@ def change_life():
     if ans == 'có':
         speak('em yêu anh mãi mãi! chụt chụt chụt')
     else:
-        speak('Giận')
+        speak('Giận, không nói chuyện với anh nữa!')
 
 def loi_yeu_thuong():
     text = 'Anh là người đẹp trai nhất trong lòng em và cả cuộc đời này, em yêu anh, không bao giờ xa anh, nhớ đó nhen, còn anh mà không thương là em giận đó, có thương em không?'
@@ -117,7 +117,7 @@ def loi_yeu_thuong():
 def sing():
     text = 'em chưa biết hát !! hay mở bài hát anh thích nhen !! '
     speak(text)
-    playsound('CuuVanKipKhong-VuongAnhTu.mp3')
+    playsound('.\Music\CuuVanKipKhong-VuongAnhTu.mp3')
     
 def brain(text):
     if 'mấy giờ' in text or 'ngày mấy' in text:
@@ -134,6 +134,7 @@ def brain(text):
 	    loi_yeu_thuong()
     if 'hát' in text or 'nhạc' in text:
         sing()
+
 def xac_nhan_ong_xa():
     text = 'Bạn là ai? Mật khẩu là gì? Nói '
     speak(text)
