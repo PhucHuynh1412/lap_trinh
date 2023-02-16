@@ -1,13 +1,10 @@
 from selenium import webdriver
 from time import sleep
 
-browser = webdriver.Edge(executable_path='edge.exe')
+br = webdriver.Edge(executable_path='edge.exe')
 
-browser.get ('http://facebook.com')
+br.get('www.google.com.vn')
 
 sleep(5)
-
-browser.close()
-
 
 
