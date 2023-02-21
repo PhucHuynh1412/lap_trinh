@@ -1,5 +1,8 @@
-from thu_vien import nang_luong_buc_xa
+from thu_vien import tinh_goc_khuc_xa
 
 if __name__ == '__main__':
-    nang_luong_buc_xa()
+    tinh_goc_khuc_xa()
+
+
+
 

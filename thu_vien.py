@@ -102,18 +102,71 @@ def kiem_tra_so_nguyen_to():
         print(f"{n} là số nguyên tố.")
 
 def nang_luong_buc_xa():
+    h = 6.625*10**(-34)
+    e = 1.6*10**(-19)
+    c = 3e8
+    print('Đề cho trường hợp nào: ')
+    print('1. Đề cho tần số.')
+    print('2. Đề cho bước sóng.')
+    lua_chon = pin.inputInt('Lựa chọn trường hợp nào: ')
+
     if lua_chon == 1:
         f = pin.inputFloat('Nhập tần số của bức xạ: ')
-        h = 6.625*10**(-34)
-        e = 1.6*10**(-19)
-        c = 3e8
         w = h*f/e
-        lamda = 1e6*c/f
+        lamda = h*c/f
         print(f'Năng lượng của bức xạ là: {round(w,3)} eV .')
         print(f'Bước sóng của bức xạ là: {round(lamda,3)} um.')
     if lua_chon == 2:
-        f = pin.inputFloat('Nhập tần số của bức xạ: ')
-        h = 6.625*10**(-34)
+        lamda = pin.inputFloat('Nhập bước sóng của bức xạ: ')
+        f = c/lamda
+        w = h*c/lamda
+        print(f'Năng lượng của bức xạ là: {round(w,3)} eV .')
+        print(f'Bước sóng của bức xạ là: {round(lamda,3)} um.')
 
+def cong_thoat_electron():
+    h = 6.625e-34
+    c = 3e8
+    data = {1: 'Tính công thoát của electron', 2: 'Tính giới hạn quang điện'}
+    for k,v in data.items():
+        print(f'{k}. {v}.')
+    lua_chon = pin.inputInt('Bạn chọn trường hợp nào: ')
+    if lua_chon == 1:
+        lamda_0 = pin.inputFloat('Nhập giá trị của giới hạn quang điện: ')
+        A = h*c/lamda_0
+        print(f'Công thoát của electron là: {A} J.')
+    elif lua_chon == 2:
+        A = pin.inputFloat('Nhập giá trị của công thoát: ')
+        lamda_0 = h*c/A
+        print('Giới hạn quang điện là: {lamda_0} m.')
 
+def dong_nang_ban_dau_cuc_dai_electron():
+    h = 6.625e-34
+    c = 3e8
+    m = 9.1e-31
+    lamda = pin.inputFloat('Nhập bước sóng của bức xạ: ')
+    lamda_0 = pin.inputFloat('Nhập giới hạn quang điện: ')
+    if lamda > lamda_0:
+        print('Không xảy ra hiện tượng quang điện')
+    else:
+        W = h*c*(1/lamda - 1/lamda_0)
+        v = math.sqrt(2*W/m)
+        print(f'Động năng ban đầu cực đại của electron là: {W} J.')
+        print(f'Vận tốc của electron là: {v} m/s.')
+
+def khoang_van():
+    lamda = pin.inputFloat('Nhập bước sóng: ')
+    D = pin.inputFloat('Nhập khoảng cách 2 khe đến màn: ')
+    a = pin.inputFloat('Nhập khoảng cách 2 khe: ')
+    i = lamda*D/a
+    print(f'Khoảng vân là: {i} mm')
+
+def tinh_goc_khuc_xa():
+    n1 = pin.inputFloat('Nhập chiết suất môi trường tới: ')
+    i = pin.inputFloat('Nhập góc tới i (theo độ): ')
+    n2 = pin.inputFloat('Nhập chiết suất môi trường khúc xạ: ')
+    r = math.acos(n1*math.sin(i*math.pi/180)/n2)*180/math.pi
+    print(r)
+
+def chay_bang_trong_vat_ly():
+    pass
 
