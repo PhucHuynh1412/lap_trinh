@@ -128,7 +128,7 @@ def brain(text):
         get_word()
     if 'mở youtube' in text:
         get_youtube()
-    if 'mệt mỏi' in text or 'bỏ cuộc' in text or 'mệt quá' in text:
+    if 'mệt mỏi' in text or 'bỏ cuộc' in text or 'mệt quá' in text or 'hơi mệt' in text or 'buồn' in text:
         change_life()
     if 'xấu xí' in text:
 	    loi_yeu_thuong()
@@ -140,14 +140,17 @@ def xac_nhan_ong_xa():
     speak(text)
     text = listen()
     if 'mãi mãi' in text:
-        text = 'Chào ông xã đã đăng nhập thành công !'
-        speak(text)
+        hello()
     else:
         text = 'Chào bạn ! bạn đăng nhập không thành công!'
         speak(text)
+        sys.exit()
 
+def thoi_tiet():
+    pass 
 
 def main():
+    xac_nhan_ong_xa()
     hello()
     text = listen().lower()
     brain(text)

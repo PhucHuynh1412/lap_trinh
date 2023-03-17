@@ -167,6 +167,10 @@ def tinh_goc_khuc_xa():
     r = math.acos(n1*math.sin(i*math.pi/180)/n2)*180/math.pi
     print(r)
 
-def chay_bang_trong_vat_ly():
-    pass
+def so_hat_nhan_con_lai():
+    t = pin.inputFloat('Nhập thời gian: ')
+    T = pin.inputFloat('Nhập chu kỳ bán rã: ')
+    N0 = pin.inputFloat('Nhập số hạt nhân ban đầu: ')
+    N = N0*2**(-t/T)
+    print(f'Số hạt nhân còn lại sau thời gian {t} là: {N}.')
 
