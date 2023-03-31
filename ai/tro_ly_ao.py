@@ -131,7 +131,7 @@ def brain(text):
     if 'mệt mỏi' in text or 'bỏ cuộc' in text or 'mệt quá' in text or 'hơi mệt' in text or 'buồn' in text:
         change_life()
     if 'xấu xí' in text:
-	    loi_yeu_thuong()
+        loi_yeu_thuong()
     if 'hát' in text or 'nhạc' in text:
         sing()
 
@@ -151,7 +151,6 @@ def thoi_tiet():
 
 def main():
     xac_nhan_ong_xa()
-    hello()
     text = listen().lower()
     brain(text)
 

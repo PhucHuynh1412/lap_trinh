@@ -174,3 +174,9 @@ def so_hat_nhan_con_lai():
     N = N0*2**(-t/T)
     print(f'Số hạt nhân còn lại sau thời gian {t} là: {N}.')
 
+def luc_dan_hoi():
+    k = pin.inputFloat('Nhập độ cứng k: ')
+    delta_l = pin.inputFloat('Nhập độ biến dạng: ')
+    F = k * delta_l
+    print(f'Lực đàn hồi có độ lớn là: {F}' N.)
+    pass 
