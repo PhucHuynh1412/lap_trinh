@@ -27,7 +27,7 @@ def tikop():
 def tinh_tien_xai(luong, tien_con):
     tien_ba_me = 2000
     tien_no = 9100
-    tien_tiet_kiem = (luong - tien_no)*0.15
+    tien_tiet_kiem = 2000 
     tien_xai = luong - tien_no - tien_ba_me - tien_tiet_kiem - tien_con 
     return tien_no, tien_ba_me, tien_tiet_kiem, tien_xai
 

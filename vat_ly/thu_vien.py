@@ -179,4 +179,3 @@ def luc_dan_hoi():
     delta_l = pin.inputFloat('Nhập độ biến dạng: ')
     F = k * delta_l
     print(f'Lực đàn hồi có độ lớn là: {F}' N.)
-    pass 
