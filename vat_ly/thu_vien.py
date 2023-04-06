@@ -8,6 +8,10 @@ import os
 import sys 
 import wikipedia
 from time import sleep
+import numpy as np 
+import scipy
+import sklearn as skl 
+
 
 def giai_phuong_trinh_bac_2():
     a = pin.inputFloat("Nhập hệ số a: ")
@@ -178,4 +182,4 @@ def luc_dan_hoi():
     k = pin.inputFloat('Nhập độ cứng k: ')
     delta_l = pin.inputFloat('Nhập độ biến dạng: ')
     F = k * delta_l
-    print(f'Lực đàn hồi có độ lớn là: {F}' N.)
+    print(f'Lực đàn hồi có độ lớn là: {F} N' )
