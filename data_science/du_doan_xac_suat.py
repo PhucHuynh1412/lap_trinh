@@ -47,7 +47,11 @@ def in_ki_so_so_va_day_so(data):
         dt[ki] = np_arr[i]
         ki += 1
     print(dt)
-
+def kiem_tra_ket_qua(number):
+    if number in data:
+        print("có trùng")
+    else:
+        print("không có trùng")
 
 #TODO: in ra man hinh so du đoán
 so_dau = xac_suat(data_1)
@@ -55,10 +59,11 @@ so_giua = xac_suat(data_2)
 so_cuoi = xac_suat(data_3)
 
 print("="*30)
-print(so_dau,so_giua,so_cuoi)
+ket_qua = so_dau*100 + so_giua* 10 + so_cuoi
+print(ket_qua)
 
 print("*"*20)
 so_trung(data)
-
 in_ki_so_so_va_day_so(data)
+kiem_tra_ket_qua(ket_qua)
 
