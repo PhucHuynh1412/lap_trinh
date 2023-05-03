@@ -1,0 +1,13 @@
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+pyinputplus
+
+gtts
+pyttsx3
+playsound
+wikipedia
+speechRecognition
+
