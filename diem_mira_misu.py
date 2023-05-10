@@ -1,6 +1,7 @@
 import pyinputplus as pin 
 import datetime
 import sys
+import numpy as np 
 
 def menu():
     data = {1:'Nhập điểm',2:'Xem điểm',3:'Thoát'}

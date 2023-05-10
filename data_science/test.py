@@ -1,13 +1,14 @@
-import random
+from hmmlearn import hmm
+import numpy as np
 
-# Dãy số đã biết
-known_sequence = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# Tạo dữ liệu ví dụ
+X = np.random.randint(low=0, high=10, size=(100, 12))
 
-# Tính toán xác suất xuất hiện của từng số trong dãy số
-probability_distribution = [1/len(known_sequence) for _ in range(len(known_sequence))]
+# Tạo và huấn luyện mô hình HMM với 10 trạng thái ẩn
+model = hmm.GaussianHMM(n_components=10)
+model.fit(X)
 
-# Dự đoán số tiếp theo dựa trên xác suất xuất hiện của từng số
-next_number = random.choices(known_sequence, weights=probability_distribution)[0]
-
-# Hiển thị số tiếp theo được dự đoán
+# Dự đoán số tiếp theo trong dãy số
+next_number = model.predict(X[-1].reshape(1, -1))[0]
 print("Số tiếp theo trong dãy số là:", next_number)
+

@@ -3,7 +3,7 @@ from hmmlearn import hmm
 
 data = []
 #TODO: lấy dữ liệu
-with open('so_so.txt','r') as f:
+with open('so_so_55.txt','r') as f:
     line = f.readline().split(' ')
 for num in line:
     data.append(int(num))
