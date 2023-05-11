@@ -117,7 +117,7 @@ def loi_yeu_thuong():
 def sing():
     text = 'em chưa biết hát !! hay mở bài hát anh thích nhen !! '
     speak(text)
-    playsound('.\Music\CuuVanKipKhong-VuongAnhTu.mp3')
+    playsound('./Music/Vo_Duyen.mp3')
     
 def brain(text):
     if 'mấy giờ' in text or 'ngày mấy' in text:

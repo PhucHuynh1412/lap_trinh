@@ -58,7 +58,6 @@ def ghi(tien_tk, tien_dt):
 #TODO: xuất dữ liệu ra màn hình
 def xuat():
     pass 
-    return text 
 
 
 # TODO: Xuất ra màn hình tiền lương, tiền tiết kiệm và tiền xài
