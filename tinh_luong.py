@@ -55,9 +55,12 @@ def ghi(tien_tk, tien_dt):
     with open('data.txt','a') as f:
         f.write(text)
     return "Cập nhật xong."
+
 #TODO: xuất dữ liệu ra màn hình
-def xuat():
-    pass 
+def thong_ke():
+    data = []
+    with open('data.txt', 'r') as f:
+        print(f.read())
 
 
 # TODO: Xuất ra màn hình tiền lương, tiền tiết kiệm và tiền xài
@@ -80,6 +83,7 @@ def main():
     tien_no, tien_ba_me, tien_tiet_kiem, tien_xai, tien_dau_tu = tinh_tien_xai(luong,tien_con)
     xuat(luong, tien_xai, tien_tiet_kiem,tien_dau_tu)
     print(ghi(tien_tiet_kiem, tien_dau_tu))
+    thong_ke()
 
 
 if __name__ == "__main__":

@@ -134,6 +134,8 @@ def brain(text):
         loi_yeu_thuong()
     if 'hát' in text or 'nhạc' in text:
         sing()
+    if 'thời tiết' in text:
+        thoi_tiet()
 
 def xac_nhan_ong_xa():
     text = 'Bạn là ai? Mật khẩu là gì? Nói '
@@ -147,10 +149,11 @@ def xac_nhan_ong_xa():
         sys.exit()
 
 def thoi_tiet():
-    pass 
+    webbrowser.open("https://openweathermap.org/")
 
 def main():
-    xac_nhan_ong_xa()
+    #xac_nhan_ong_xa()
+    hello()
     text = listen().lower()
     brain(text)
 

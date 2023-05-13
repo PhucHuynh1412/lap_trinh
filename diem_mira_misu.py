@@ -1,4 +1,4 @@
-import pyinputplus as pin 
+import pyinputplus as pin
 import datetime
 import sys
 import numpy as np 
