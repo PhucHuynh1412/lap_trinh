@@ -1,4 +1,6 @@
 # TODO: Thu vien
+import requests
+import json
 import random
 import datetime
 from colorama import AnsiToWin32
@@ -149,7 +151,20 @@ def xac_nhan_ong_xa():
         sys.exit()
 
 def thoi_tiet():
-    webbrowser.open("https://openweathermap.org/")
+    lat = 10.75
+    lon = 106.666672
+    id_city = 1566083
+    city = "Ho Chi Minh City, VN"
+    api_key = "e72c924ff005005712567f841a3d205f"
+    url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api_key}&lang=vi&units=metric"
+    response = requests.get(url)
+    data = json.loads(response.text)
+    nhiet_do = data["main"]["temp"]
+    do_am = data["main"]["humidity"]
+    gio = data["wind"]["speed"]
+    mo_ta = data["weather"][0]["description"]
+    text = f"Hôm nay nhiệt độ là {nhiet_do} độ, độ ẩm của không khí là {do_am} phần trăm, tốc độ gió là {gio} m/s, bầu trời thì {mo_ta}"
+    speak(text)
 
 def main():
     #xac_nhan_ong_xa()
