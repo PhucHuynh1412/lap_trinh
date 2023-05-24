@@ -21,7 +21,6 @@ B = np.array([c1,c2])
 
 X = np.linalg.solve(A,B)
 
-
 print(f'x = {X[0]}')
 
 
