@@ -2,6 +2,7 @@ import speech_recognition as sr
 import os
 from playsound import playsound 
 from gtts import gTTS 
+import time 
 
 def read_data():
     data = []
@@ -19,7 +20,20 @@ def speak(text):
     os.remove('co.mp3')
 
 def listen():
-    pass 
+    co = sr.Recognizer()
+    with sr.Microphone() as source: 
+        co.pause_threshold=1
+        audio = co.listen(source,phrase_time_limit=7)
+        try:
+            text = co.recognize_google(audio, language='vi-VN')
+            print(f"Con: {text}")
+            return text
+        except:
+            time.sleep(1)
+            speak("Cô nghe không rõ con nói lại nhen!")
+            listen()
+
+
 
 def main():
     data = read_data()
