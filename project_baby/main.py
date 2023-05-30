@@ -33,12 +33,17 @@ def listen():
             speak("Cô nghe không rõ con nói lại nhen!")
             listen()
 
+def check_answer():
+    pass 
 
+def program():
+    data = read_data()
+    for idx, line in enumerate(data):
+        question = f"Câu {idx} là: {line[0]}" 
+        speak(question)
 
 def main():
-    data = read_data()
-    speak(data[0][0])
-
+    program()
 if __name__ == "__main__":
     main()
 
