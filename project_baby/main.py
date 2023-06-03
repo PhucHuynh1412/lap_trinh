@@ -33,8 +33,16 @@ def listen():
             speak("Cô nghe không rõ con nói lại nhen!")
             listen()
 
-def check_answer():
+def check_answer(text,dap_an):
     pass 
+
+
+def read_question(text):
+    speak(text)
+
+def listen_answer():
+    text = listen()
+    return text
 
 def program():
     data = read_data()
@@ -44,6 +52,7 @@ def program():
 
 def main():
     program()
+
 if __name__ == "__main__":
     main()
 
