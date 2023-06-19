@@ -2,7 +2,6 @@ import pyinputplus as pin
 import datetime
 import numpy as np 
 
-
 # TODO: Nhập cơ sở dữ liệu ban đầu 
 def nhap():
     print('Nhập các thông tin cơ bản để tính lương:')
