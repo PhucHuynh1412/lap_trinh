@@ -12,7 +12,6 @@ def nhap():
     tien_con = pin.inputFloat("Nhập tiền đóng học phí cho con: ")
     return muc_luong, so_ca_ngay, so_ca_toi, so_ca_chu_nhat, tien_con
 
-
 # TODO: Mức lương quy định 
 def muc_luong_quy_dinh(muc_luong):
     muc_sang = muc_luong
@@ -41,7 +40,7 @@ def take_date():
     year = now.year
     return f'{month}-{year}'
 
-def ghi(tien_tk, tien_dt):
+def write_data(tien_tk, tien_dt):
     date = take_date()
     with open('data.txt', 'r') as f:
         lines = f.readlines()
@@ -57,7 +56,7 @@ def ghi(tien_tk, tien_dt):
     return "Cập nhật xong."
 
 #TODO: xuất dữ liệu ra màn hình
-def thong_ke():
+def money_statistics():
     data = []
     with open('data.txt', 'r') as f:
         print(f.read())

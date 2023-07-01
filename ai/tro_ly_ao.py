@@ -172,6 +172,5 @@ def main():
     text = listen().lower()
     brain(text)
 
-
 if __name__ == "__main__":
    main()
