@@ -14,10 +14,28 @@ def salary_caculation(bs,ms,ns,ss):
     salary = (ms*mss + ns*nss + ss*sss)*4
     return salary
 
+def spending_for_the_month():
+    bank_debt = 9100
+    parent_money = 2000
+    english_money = 1000
+    money_for_children = 1800
+    telephone_fee = 500
+    return [bank_debt, parent_money, english_money, money_for_children, telephone_fee]
+
+def cash_in_return(salary):
+    data = spending_for_the_month()
+    salary_real = salary
+    for num in data:
+        salary_real = salary_real - num 
+    return salary_real
+
 def main():
     bs, ms, ns, ss = input()
     salary = salary_caculation(bs,ms,ns,ss)
     print(f"Lương tháng này là: {salary}")
+    investment_money = pin.inputInt('Nhập tiền đầu tư tháng này: ')
+    salary_real = cash_in_return(salary) - investment_money
+    print(f"Tiền còn lại sau khi trừ các khoảng phí là: {salary_real}")
 
 if __name__ == "__main__":
     main()
