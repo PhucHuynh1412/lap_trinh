@@ -11,6 +11,13 @@ def tinh_luong_thang(muc_luong, so_ca_sang, so_ca_toi, so_ca_cn):
     luong_thang = muc_luong*so_ca_sang + (muc_luong+40)*so_ca_toi + (muc_luong+60)*so_ca_cn 
     return luong_thang
     
+def in_thong_tin_ra_man_hinh(muc_luong,so_ca_sang,so_ca_toi,so_ca_cn):
+    print(f'Mức lương hiện tại là: {muc_luong}')
+    print(f"Số ca sáng là: {so_ca_sang}")
+    print(f"Số ca tối là: {so_ca_toi}")
+    print(f"Số ca chủ nhật là: {so_ca_cn}")
+    pass 
+
 def main():
     muc_luong,so_ca_sang,so_ca_toi,so_ca_cn = nhap_du_lieu()
     print(tinh_luong_thang(muc_luong,so_ca_sang,so_ca_toi,so_ca_cn))
