@@ -20,9 +20,9 @@ import pyinputplus as pin
 def speak(text):
     print(f"Bà xã: {text}")
     nhu = gTTS(text,lang='vi')
-    nhu.save('baxa.mp3')
-    playsound('baxa.mp3')
-    os.remove('baxa.mp3')
+    nhu.save(r'F:\lap_trinh\ai\baxa.mp3')
+    playsound(r'F:\lap_trinh\ai\baxa.mp3')
+    os.remove(r'F:\lap_trinh\ai\baxa.mp3')
 
 def listen():
     baxa = sr.Recognizer()
@@ -119,7 +119,7 @@ def loi_yeu_thuong():
 def sing():
     text = 'em chưa biết hát !! hay mở bài hát anh thích nhen !! '
     speak(text)
-    playsound('./Music/Vo_Duyen.mp3')
+    playsound('.\Music\AiNo1-MasewKhoiVu-7078913.mp3')
     
 def brain(text):
     if 'mấy giờ' in text or 'ngày mấy' in text:
